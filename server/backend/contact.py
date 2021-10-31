@@ -1,5 +1,5 @@
 import requests
-import secret.env as env
+import env
 from flask import request
 
 def sendmail():

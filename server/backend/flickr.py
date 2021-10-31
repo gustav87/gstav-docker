@@ -1,7 +1,7 @@
 from flask import request
 from bson.json_util import dumps
 import urllib.request
-import secret.env as env
+import env
 import time
 
 flickr_api = 'https://api.flickr.com/services/rest'
