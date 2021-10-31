@@ -20,7 +20,5 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./db/config.js:/docker-entrypoint-initdb.d/config.js
       - ./db/data:/data/db
-    environment:
-      MONGO_INITDB_DATABASE: gstavmongo
+    command: mongod --quiet --logpath /dev/null 
