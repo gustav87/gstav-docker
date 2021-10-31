@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 from flask import Flask, render_template, send_from_directory
 from flask_pymongo import PyMongo
-import backend.contact, backend.dataBasics, backend.ip, backend.flickr, secret.env as env
+import backend.contact, backend.dataBasics, backend.ip, backend.flickr
 
 app = Flask(__name__)
 
 #connect and create db
-app.config["MONGO_URI"] = env.mongoURI
+app.config["MONGO_URI"] = "mongodb://db:27017/gstav"
 
 #initialize the client for mongodb
 mongo = PyMongo(app)
@@ -58,5 +58,4 @@ def get_dogs():
   return backend.flickr.getDogs()
 
 if __name__ == '__main__':
-  # app.run(debug=True)
-  app.run(host=backend.ip.get_ip())
+  app.run(host=backend.ip.get_ip(), debug=True)
