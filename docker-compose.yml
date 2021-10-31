@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: gstav
     ports:
-      - "${IP}:5000:5000"
+      - "5000:5000"
     volumes:
       - ./server:/server
 
