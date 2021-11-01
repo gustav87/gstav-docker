@@ -10,6 +10,7 @@ services:
       - "5000:5000"
     volumes:
       - ./server:/server
+    env_file: .env
 
   db:
     container_name: cgstav-db
@@ -21,4 +22,4 @@ services:
       - "27017:27017"
     volumes:
       - ./db/data:/data/db
-    command: mongod --quiet --logpath /dev/null 
+    command: mongod --quiet --logpath /dev/null
