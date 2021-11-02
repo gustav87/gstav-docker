@@ -1,5 +1,4 @@
 From python:3.9.7-alpine
-#From library/python:3.6-stretch
 WORKDIR /server
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
